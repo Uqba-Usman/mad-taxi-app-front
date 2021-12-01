@@ -16,7 +16,6 @@ const DummyScreen = (props) => (
 
 const RootNavigator = (props) => {
   return (
-    <NavigationContainer>
       <Drawer.Navigator drawerContent={
         (props) => (
           <CustomDrawer {...props} />)
@@ -40,7 +39,6 @@ const RootNavigator = (props) => {
         </Drawer.Screen>
 
       </Drawer.Navigator>
-    </NavigationContainer>
   );
 };
 

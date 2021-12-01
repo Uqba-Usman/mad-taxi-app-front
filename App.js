@@ -13,12 +13,14 @@ import Geolocation from '@react-native-community/geolocation';
 import { withAuthenticator } from 'aws-amplify-react-native'
 
 import Router from './src/navigation/Root';
+import AuthStack from './src/navigation/AuthStack';
+import MainContainer from './src/navigation/MainContainer';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 
-import Amplify from 'aws-amplify'
-import config from './aws-exports'
-Amplify.configure(config)
+// import Amplify from 'aws-amplify'
+// import config from './aws-exports'
+// Amplify.configure(config)
 
 const App: () => React$Node = () => {
 
@@ -58,9 +60,12 @@ const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <Router />
+      {/* <AuthStack /> */}
+      <MainContainer />
+      {/* <Router /> */}
     </>
   );
 };
 
-export default withAuthenticator(App);
+// export default withAuthenticator(App);
+export default App;
