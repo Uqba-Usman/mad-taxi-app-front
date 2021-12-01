@@ -9,19 +9,7 @@ import {listCars} from '../../graphql/queries';
 const HomeMap = (props) => {
   const [cars, setCars] = useState([]);
 
-  useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        const response = await API.graphql(graphqlOperation(listCars));
-        console.log('Home RES: ', response);
-        setCars(response.data.listCars.items);
-      } catch (e) {
-        console.error(e);
-      }
-    };
-
-    fetchCars();
-  }, []);
+  useEffect(() => {}, []);
 
   const getImage = (type) => {
     if (type === 'UberX') {
@@ -44,25 +32,22 @@ const HomeMap = (props) => {
         latitudeDelta: 0.0222,
         longitudeDelta: 0.0121,
       }}>
-      {cars.map((car) => (
-        <Marker
-          key={car.id}
-          coordinate={{latitude: car.latitude, longitude: car.longitude}}>
-          <Image
-            style={{
-              width: 70,
-              height: 70,
-              resizeMode: 'contain',
-              transform: [
-                {
-                  rotate: `${car.heading}deg`,
-                },
-              ],
-            }}
-            source={getImage(car.type)}
-          />
-        </Marker>
-      ))}
+      {/* {cars.map((car) => ( */}
+      <Marker
+        key="123"
+        // coordinate={{latitude: car.latitude, longitude: car.longitude}}>
+        coordinate={{latitude: 31.4027, longitude: 74.2126}}>
+        <Image
+          style={{
+            width: 70,
+            height: 70,
+            resizeMode: 'contain',
+          }}
+          // source={getImage(car.type)}
+          source="../../assets/images/top-UberX.png"
+        />
+      </Marker>
+      {/* ))} */}
     </MapView>
   );
 };
