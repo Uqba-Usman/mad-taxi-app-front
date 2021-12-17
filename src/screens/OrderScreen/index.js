@@ -10,8 +10,6 @@ import styles from './styles.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import OrderMap from '../../components/OrderMap';
 import {useRoute} from '@react-navigation/native';
-import {API, graphqlOperation} from 'aws-amplify';
-import {getOrder, getCar} from '../../graphql/queries';
 import {onOrderUpdated, onCarUpdated} from './subscriptions';
 import {useNavigation} from '@react-navigation/native';
 
